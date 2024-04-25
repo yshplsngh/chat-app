@@ -4,17 +4,17 @@ import authRouter from "./routes/auth.js";
 import { connectTomongoDB } from "./db/connectTomongoDB.js";
 
 const app = express();
-const PORT = process.env.PORT || 4000;
 dotenv.config();
+const PORT = process.env.PORT || 4000;
 
 app.use(express.json()); // to parse the incoming request with json payload (from req.body)
 
 app.use("/api/auth", authRouter);
 
-// app.get("/", (req, res) => {
-//   // root route localhost 6000
-//   res.send("hello");
-// });
+app.get("/", (req, res) => {
+  // root route localhost 6000
+  res.send("hello");
+});
 
 app.listen(PORT, () => {
   connectTomongoDB();

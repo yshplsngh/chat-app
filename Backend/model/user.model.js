@@ -5,7 +5,7 @@ const userschema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  usrname: {
+  username: {
     type: String,
     required: true,
     unique: true,
@@ -25,4 +25,5 @@ const userschema = new mongoose.Schema({
     default: "",
   },
 });
-export default mongoose.model('User',userschema)
+const User= mongoose.model('User',userschema)
+export default User

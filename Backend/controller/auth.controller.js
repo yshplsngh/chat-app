@@ -1,17 +1,18 @@
 import User from "../model/user.model.js";
 
 export const signup = async (req, res) => {
+    // res.send("hello")
   try {
     const { fullname, username, password, confirmpassword, gender } = req.body;
     
     if(password!=confirmpassword){
-        return res.send(400).json({error:"password dont match"})
+        return res.status(400).json({error:"password dont match"})
     }
 
     const user= await User.findOne({username})
     
     if(user){
-        return res.send(400).json({error:"user already exist"})
+        return res.status(400).json({error:"user already exist"})
     }
 
     //hashcode here
@@ -35,12 +36,15 @@ export const signup = async (req, res) => {
     res.status(201).json({
         _id:newuser._id,
         fullname:newuser.fullname,
-        username:newuser.usrname,
+        username:newuser.username,
         profilepic:newuser.profilepic
 
     })
 
-  } catch (error) {}
+  } catch (error) {
+    console.log("error in signup controller",error.message)
+    res.status(401).json({error:"error.message"})
+  }
 };
 
 export const login = (req, res) => {

@@ -7,7 +7,7 @@ const Conversationschema= mongoose.Schema({
     }],
     messages:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Meassage",
+        ref:"Message",
         default:[]
     }]
     //createAt updateAt => Member since <created>

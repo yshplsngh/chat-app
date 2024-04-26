@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #2f3a45; /* Adjust the color code to match the slate-950 color */
+  }
+  
+  body .absolute {
+    position: absolute;
+  }
+  
+  body .bottom-0 {
+    bottom: 0;
+  }
+  
+  body .left-0 {
+    left: 0;
+  }
+  
+  body .right-0 {
+    right: 0;
+  }
+  
+  body .top-0 {
+    top: 0;
+  }
+  
+  body .bg-linear-gradient {
+    background-image: linear-gradient(to right, #4f4f4f2e 1px, transparent 1px), linear-gradient(to bottom, #4f4f4f2e 1px, transparent 1px);
+    background-size: 14px 24px;
+  }
+  
+  body .mask-image-radial-gradient {
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+  }
+  

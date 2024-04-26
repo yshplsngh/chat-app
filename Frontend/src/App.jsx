@@ -1,16 +1,12 @@
-import { useState } from 'react'
-
-
-import './App.css'
+import "./App.css";
+import { Login } from "./pages/Login.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      fefqbfq
-    </>
-  )
+    <div className="flex h-screen justify-center items-center p-4">
+      <Login />
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -3,7 +3,7 @@ import { Conversation } from "./Conversation";
 
 export const Conversatons = () => {
   return (
-    <div>
+    <div className="">
       <Conversation />
       <Conversation />
       <Conversation />

@@ -1,7 +1,9 @@
 import React from 'react'
+import { useLogout } from '../../hooks/useLogout'
 
 export const Logout = () => {
+  const {logout,loading}=useLogout()
   return (
-    <div className='fixed bottom-2 p-3'>Logout</div>
+    <button onClick={logout} className='fixed bottom-2 p-3'>Logout</button>
   )
 }

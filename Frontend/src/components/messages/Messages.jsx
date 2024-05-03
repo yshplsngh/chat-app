@@ -9,7 +9,7 @@ export const Messages = () => {
       {nochatSelected?(<NoChatSelected/>):(
         <>
         {/* Header */}
-        <div className="bg-white px-2 py-4 mb-3">
+        <div className="bg-white px-2 pt-2 rounded-l-full rounded-r-full mr-2  mb-3 mt-5 h-10">
          <span>To:</span>{" "} 
          <span className="font-bold text-blue-300">Shiva</span> 
         </div>

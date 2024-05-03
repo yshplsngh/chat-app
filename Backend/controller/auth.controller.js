@@ -3,17 +3,21 @@ import bcrypt from "bcryptjs";
 import { generatetokenandsetcookie } from "../utils/generatetoken.js";
 
 export const signup = async (req, res) => {
-  // res.send("hello")
+  console.log("hello")
   try {
     const { fullname, username, password, confirmpassword, gender } = req.body;
+  
+    // console.log(req);
 
     if (password != confirmpassword) {
+      // console.log(1)
       return res.status(400).json({ error: "password dont match" });
     }
 
     const user = await User.findOne({ username });
 
     if (user) {
+      // console.log(2)
       return res.status(400).json({ error: "user already exist" });
     }
 
@@ -21,7 +25,7 @@ export const signup = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
 
     const hashpassword = await bcrypt.hash(password, salt);
-
+    console.log(3)
     //https://avatar.iran.liara.run/public/boy
 
     const boypicprofile = `https://avatar.iran.liara.run/public/boy?username=${username}`;
@@ -34,8 +38,9 @@ export const signup = async (req, res) => {
       gender,
       profilepic: gender == "male" ? boypicprofile : girlpicprofile,
     });
-
+    console.log(4)
     if (newuser) {
+      console.log(5)
       //generate token here
       generatetokenandsetcookie(newuser._id, res);
       await newuser.save();
@@ -46,6 +51,7 @@ export const signup = async (req, res) => {
         username: newuser.username,
         profilepic: newuser.profilepic,
       });
+      console.log(6)
     } else {
       res.status(400).json({ error: "invaild user data" });
     }

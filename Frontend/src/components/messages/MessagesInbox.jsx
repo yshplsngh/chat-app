@@ -9,6 +9,15 @@ export const MessagesInbox = () => {
         <Message/>
         <Message/>
         <Message/>
+        <Message/>
+        <Message/>
+        <Message/>
+        <Message/>
+        <Message/>
+        <Message/>
+        <Message/>
+        <Message/>
+        <Message/>
     </div>
   )
 }

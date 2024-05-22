@@ -91,7 +91,7 @@ export const Signup = () => {
               placeholder="Confirm password"
               disabled={Loading}
             >
-              {Loading?<i class="fa-thin fa-spinner"></i>:"Signup"}
+              {Loading?<i className="fa-thin fa-spinner"></i>:"Signup"}
               
             </button>
           </div>

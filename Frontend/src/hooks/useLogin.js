@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
+
 
 export const useLogin = () => {
   const [loading, setloading] = useState(false);
@@ -9,25 +10,27 @@ export const useLogin = () => {
     const success = handleInputError(username, password);
     if (!success) return;
     setloading(true);
-    
+
     try {
-      
       const res = await fetch("http://localhost:4600/api/auth/login", {
         method: "POST",
+        credentials:"include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
-      
+
       const data = await res.json();
-      
+
       if (data.error) {
         throw new Error(error.message);
       }
       
+
       localStorage.setItem("chat-user", JSON.stringify(data));
       setAuthuser(data);
+      
     } catch (error) {
-        toast.error(error.message);
+      toast.error(error.message);
       console.log("error in uselogin");
     } finally {
       setloading(false);

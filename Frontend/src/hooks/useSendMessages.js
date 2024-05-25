@@ -9,6 +9,9 @@ export const useSendMessages = () => {
   const sendMessage = async (message) => {
     setloading(true);
     try {
+        const requestBody = { message };
+        console.log("Sending request body:", requestBody)
+
       const res = await fetch(
         `http://localhost:4600/api/message/send/${selectedConversation._id}`,
         {
@@ -19,9 +22,10 @@ export const useSendMessages = () => {
         }
       );
       const data = await res.json();
+      console.log("Received response data:", data);
       if (data.error) throw new Error(data.message);
       console.log(data)
-      setMessage([...messages, data.newMessage]);
+      setMessage([...messages, data]);
     } catch (error) {
       console.error("Error in sendMessage:", error); // Log error details
       toast.error(error.message);

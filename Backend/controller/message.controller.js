@@ -28,13 +28,13 @@ export const sendMessage = async (req, res) => {
     if (newMessage) {
       conversation.messages.push(newMessage._id);
     }
-
-    res.status(201).json({ newMessage });
+    // this will run in parallel
+		await Promise.all([conversation.save(), newMessage.save()]);
+    
 
     //socket IO functionality will go here
 
-    //run in parallel
-    await Promise.all([conversation.save(), newMessage.save()]);
+    res.status(201).json({ newMessage });
   } catch (error) {
     console.log("error in sendmessage controller", error.message);
     res.status(500).json({ error: "internal server error" });

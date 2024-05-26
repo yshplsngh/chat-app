@@ -14,7 +14,7 @@ export const Message = ({ message }) => {
   return (
     <>
       {fromme ? (
-        <div key={message._id} className="flex justify-end mb-4 cursor-pointer ">
+        <div  className="flex justify-end mb-4 cursor-pointer ">
           <div className="flex max-w-96 bg-indigo-500 text-white rounded-lg p-3 gap-3">
             <p>{message.messages}</p>
           </div>
@@ -28,7 +28,7 @@ export const Message = ({ message }) => {
           </div>
         </div>
       ) : (
-        <div key={message._id} className="flex mb-4 cursor-pointer ">
+        <div  className="flex mb-4 cursor-pointer ">
           <div className="w-9 h-9 rounded-full flex flex-col items-center justify-center mr-2 pt-4">
             <img
               src={profilepic}

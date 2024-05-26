@@ -6,10 +6,12 @@ import messageroute from "./routes/message.js";
 import userRoute from "./routes/user.js";
 import { connectTomongoDB } from "./db/connectTomongoDB.js";
 import cors from "cors";
+import { app, server } from "./socket/socket.js";
 
-const app = express();
 dotenv.config();
+
 const PORT = process.env.PORT || 4000;
+
 
 app.use(cors({origin:"http://localhost:5173",credentials:true}))
 
@@ -21,7 +23,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/message", messageroute);
 app.use("/api/users", userRoute);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectTomongoDB();
   console.log(`server running on port ${PORT}`);
 });

@@ -22,7 +22,7 @@ export const useSendMessages = () => {
         }
       );
       const data = await res.json();
-    //   console.log("Received response data:", data);
+      console.log("selectedConversation id", selectedConversation._id);
       if (data.error) throw new Error(data.message);
       console.log(data);
       setMessage([...messages, data]);

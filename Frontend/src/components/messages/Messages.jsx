@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { MessagesInbox } from "./MessagesInbox";
 import { MessagesInput } from "./MessagesInput";
 import useConversation from "../../zustand/useConversation";
+import { useAuthContext } from "../../context/AuthContext";
 
 export const Messages = () => {
 
@@ -33,10 +34,11 @@ export const Messages = () => {
 
 
 const NoChatSelected=()=>{
+  const {Authuser}=useAuthContext()
   return(
     <div className="flex justify-center items-center w-full h-full border-l">
       <div className=" text-center flex flex-col">
-        <p>hello shiva</p>
+        <p>{Authuser.fullname}</p>
         <p>Select a chat to start chatting</p>
       </div>
 

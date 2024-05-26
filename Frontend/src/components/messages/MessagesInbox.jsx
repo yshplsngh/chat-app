@@ -21,8 +21,10 @@ export const MessagesInbox = () => {
       {!loading &&
         messages.length > 0 &&
         messages.map((message) => (
-          <div ref={LastMessageRef} key={message._id}>
+          
+          <div key={message._id} ref={LastMessageRef} >
             <Message message={message} />
+            
           </div>
         ))}
       {loading && [...Array(2)].map((_, idx) => <Messageskeleton key={idx} />)}

@@ -7,7 +7,7 @@ export const MessagesInput = () => {
   const handlesubmit=async(e)=>{
     e.preventDefault();
     if(!message) return;
-    console.log("Submitting message:", message); // Log the message content
+    // console.log("Submitting message:", message); // Log the message content
     await sendMessage(message)
     setMessage("")
 

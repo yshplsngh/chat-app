@@ -1,4 +1,5 @@
 import express from "express";
+
 import dotenv from "dotenv";
 import authRouter from "./routes/auth.js";
 import cookieParser from "cookie-parser";
@@ -11,6 +12,7 @@ import { app, server } from "./socket/socket.js";
 dotenv.config();
 
 const PORT = process.env.PORT || 4000;
+
 
 
 app.use(cors({origin:"http://localhost:5173",credentials:true}))

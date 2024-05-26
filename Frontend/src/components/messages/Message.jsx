@@ -10,11 +10,11 @@ export const Message = ({ message }) => {
   const profilepic = fromme
     ? Authuser.profilepic
     : selectedConversation.profilepic;
-  const time=extractTime(message.createdAt)
+  const time = extractTime(message.createdAt);
   return (
     <>
       {fromme ? (
-        <div  className="flex justify-end mb-4 cursor-pointer ">
+        <div className="flex justify-end mb-4 cursor-pointer ">
           <div className="flex max-w-96 bg-indigo-500 text-white rounded-lg p-3 gap-3">
             <p>{message.messages}</p>
           </div>
@@ -28,7 +28,7 @@ export const Message = ({ message }) => {
           </div>
         </div>
       ) : (
-        <div  className="flex mb-4 cursor-pointer ">
+        <div className="flex mb-4 cursor-pointer ">
           <div className="w-9 h-9 rounded-full flex flex-col items-center justify-center mr-2 pt-4">
             <img
               src={profilepic}

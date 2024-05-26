@@ -12,7 +12,7 @@ const useListenMessages = () => {
 			// newMessage.shouldShake = true;
 			const sound = new Audio(soundnoti);
 			sound.play();
-			setMessages([...messages, newMessage]);
+			setMessage([...messages, newMessage]);
 		});
 
 		return () => soket?.off("newMessage");

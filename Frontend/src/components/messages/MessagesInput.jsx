@@ -10,7 +10,7 @@ export const MessagesInput = () => {
    
     await sendMessage(message)
     setMessage("")
-
+    
   }
 
   return (

@@ -22,10 +22,13 @@ export const useGetMessages = () => {
         const data = await res.json();
         if (data.error) throw new Error(error.message);
         setMessage(data);
+        console.log(messages)
+        
       } catch (error) {
         toast.error(error.message)
       } finally {
         setloading(false);
+        
       }
     };
     if(selectedConversation?._id) getMessages()

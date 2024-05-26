@@ -15,7 +15,7 @@ export const MessagesInbox = () => {
     }, 100);
   }, [messages]);
 
-  // console.log("message",messages);
+ 
   return (
     <div className=" flex-1 overflow-auto px-4">
       {!loading &&
@@ -24,7 +24,7 @@ export const MessagesInbox = () => {
           <div key={message._id} ref={LastMessageRef}>
             <Message message={message} />
             {console.log("message._id", message._id)}
-            {/* {console.log(messages)} */}
+            
           </div>
         ))}
       {loading && [...Array(2)].map((_, idx) => <Messageskeleton key={idx} />)}

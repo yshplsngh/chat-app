@@ -9,6 +9,11 @@ import { connectTomongoDB } from "./db/connectTomongoDB.js";
 import cors from "cors";
 import { app, server } from "./socket/socket.js";
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 dotenv.config();
 
 const PORT = process.env.PORT || 4000;
@@ -24,6 +29,12 @@ app.use(cookieParser());
 app.use("/api/auth", authRouter);
 app.use("/api/message", messageroute);
 app.use("/api/users", userRoute);
+
+app.use(express.static(path.join(__dirname,"dist")))
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname,"dist", "index.html"));
+});
 
 server.listen(PORT, () => {
   connectTomongoDB();

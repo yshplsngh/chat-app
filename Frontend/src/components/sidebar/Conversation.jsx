@@ -11,7 +11,7 @@ export const Conversation = ({ conversation, lastIdx, emoji }) => {
   // const isonline=onlineuser.includes(conversation._id)
   return (
     <>
-      <div className={`flex gap-2 hover:bg-sky-300 p-3 py-1 rounded cursor-pointer ${isSelected?"bg-sky-400":""}`}
+      <div className={`  flex gap-2 hover:bg-sky-300 p-3 py-1 rounded cursor-pointer ${isSelected?"bg-sky-400":""}`}
       onClick={() => setSelectedConversation(conversation)}
       >
         <div className="avatar online">

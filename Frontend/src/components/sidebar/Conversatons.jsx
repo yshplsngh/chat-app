@@ -7,7 +7,7 @@ export const Conversatons = () => {
   const {loading,conversations}=useGetConversation();
   // console.log(conversations)
   return (
-    <div className="">
+    <div className="overflow-y-auto max-h-80 ">
       {conversations.map((conversation,idx)=>(
         <Conversation
         key={conversation._id}

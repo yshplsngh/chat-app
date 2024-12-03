@@ -5,11 +5,13 @@ import { Logout } from './Logout'
 
 export const Sidebar = () => {
   return (
-    <div >
-        <SearchInput/>
-       <Conversatons/>
-        {/* <Users/> */}
-        <Logout/>
+    <div>
+      <SearchInput />
+      <Conversatons />
+      {/* <Users /> */}
+      <div className="mt-0">
+        <Logout />
+      </div>
     </div>
   )
 }

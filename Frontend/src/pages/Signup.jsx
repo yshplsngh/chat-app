@@ -22,8 +22,8 @@ export const Signup = () => {
 
   }
   return (
-    <div className=" flex flex-col items-center justify-center min-w-96 mx-auto">
-      <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter border-opacity-0">
+    <div className=" flex flex-col items-center justify-center h-screen mx-auto">
+      <div className=" p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter border-opacity-0">
         <h1 className="text-3xl text-center">
           Signup <span className="text-blue-400">Chat App</span>
         </h1>

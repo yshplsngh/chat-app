@@ -1,7 +1,7 @@
 import AnimatedText from "../components/AnimateText.jsx";
 import {Link} from "react-router-dom";
 import Button from "../components/Button.jsx";
-
+import Footer from "../components/Footer.jsx";
 const Home = () => {
 	return (
 		<>
@@ -30,7 +30,9 @@ const Home = () => {
 				</div>
 				<Link to="/login">
 					<Button type={'button'} variant={'secondary'} text={'Get started'} className={'h-11 rounded-3xl'}/>
+
 				</Link>
+                <Footer/>
 			</main>
 		</>
 	);

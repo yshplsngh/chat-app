@@ -8,8 +8,8 @@ import Footer from "./components/Footer.jsx";
 
 const Layout = ({children}) => {
 	const location = useLocation();
-	const omitHeader = ['/login'];
-	const pickBG = ['/landing','/login'];
+	const omitHeader = ['/login','/signup'];
+	const pickBG = ['/landing','/login','/signup'];
 
 	const shouldOmitHeader = () => {
 		return omitHeader.some((path) => location.pathname === path);
@@ -28,10 +28,10 @@ const Layout = ({children}) => {
 				// show black bg for all endpoints other than pickBG arrays one
 				className={`${!pickBG.includes(location.pathname) ? 'bg-background-dark' : ''} flex justify-center`}
 			>
-				<div className={'min-h-[45rem] w-[80rem]'}>{children}</div>
+				<div className={'min-h-[35rem] mt-10 w-[80rem]'}>{children}</div>
 
 			</div>
-			<Footer/>
+			
 			<Toaster/>
 		</>
 	);

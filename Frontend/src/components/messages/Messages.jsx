@@ -16,11 +16,11 @@ export const Messages = () => {
   }, [setSelectedConversation]);
 
   return (
-    <div className="flex flex-col md:min-w-[450px]">
+    <div className="flex flex-col md:min-w-[450px] text-black">
       {!selectedConversation?(<NoChatSelected/>):(
         <>
         {/* Header */}
-        <div className="bg-white px-2 pt-2 rounded-l-full rounded-r-full mr-2  mb-3 mt-5 h-10">
+        <div className="bg-white px-2 pt-2  rounded-l-full rounded-r-full mr-2  mb-3 mt-5 h-10">
          <span>To:</span>{" "} 
          <span className="font-bold text-blue-300">{selectedConversation.fullname}</span> 
         </div>

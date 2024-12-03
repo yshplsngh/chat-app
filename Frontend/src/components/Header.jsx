@@ -1,7 +1,9 @@
 import Button from './Button';
 import { Link } from 'react-router-dom';
+import { useAuthContext } from '../context/AuthContext';
 
 function Header() {
+	const {Authuser} = useAuthContext();
 	return (
 		<div
 			className={
@@ -14,10 +16,14 @@ function Header() {
 						<span className="font-bold">ChatsApp</span>
 					</Link>
 				</div>
-
-				<Link to="/login">
-					<Button type={'button'} variant={'outlineB'} text={'Sign in'} />
-				</Link>
+               {
+                 !Authuser && ( 
+					<Link to="/login">
+						<Button type={'button'} variant={'outlineB'} text={'Sign in'} />
+					</Link>
+				)
+			   }
+				
 			</div>
 		</div>
 	);

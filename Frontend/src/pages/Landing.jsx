@@ -1,51 +1,39 @@
-import React from "react";
-import "./LandingPage.css"; // Include this file for styling
-import { useNavigate } from "react-router-dom";
+import AnimatedText from "../components/AnimateText.jsx";
+import {Link} from "react-router-dom";
+import Button from "../components/Button.jsx";
 
-const Landing = () => {
-  const navigate = useNavigate();
-  const handleLogin = () => {
-    console.log("Login button clicked");
-    navigate("/login");
-  };
-  return (
-    <div className="landing-page">
-      <header className="header">
-        <div className="logo">
-          <span>💬</span> ChatSia
-        </div>
-      </header>
+const Home = () => {
+	return (
+		<>
+			<main className="z-10 m-auto flex min-h-[90vh] flex-col items-center space-y-10 bg-transparent">
+				<div className="mt-20 flex flex-col items-center">
+					<AnimatedText>
+						🚀 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-400"/>{' '}
+						<span
+							className={
+								`animate-gradient inline bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+							}
+						>
+              Introducing ChatsApp
+            </span>
+					</AnimatedText>
+					<div
+						className="my-10 mt-10 max-w-[80vw] bg-gradient-to-br from-white to-white/30 bg-clip-text text-center text-3xl font-bold text-transparent shadow-lg md:text-7xl">
+						Connect, Chat, and Call
+						<br/>
+						with Ease
+					</div>
+					<div className={'text-zinc-400'}>Experience seamless communication with ChatSia - your all-in-one
+						platform for messaging.
+					</div>
 
-      <main className="main-content">
-        <h1 className="text-4xl font-bold">
-          Connect, Chat, and Call with Ease
-        </h1>
-        <p className="text-lg font-semibold mt-3">
-          Experience seamless communication with ChatSia - your all-in-one
-          platform for
-          <br />
-          messaging.
-        </p>
-        <button onClick={handleLogin} className="google-signin mt-4">
-          <span>🔗</span> Login
-        </button>
-
-        <div className="features mt-4">
-          <span>💬 Instant Messaging</span>
-        </div>
-      </main>
-
-      <footer className="footer  ">
-        <div className="footer-content ">
-          <p>© 2024 ChatSia. All rights reserved.</p>
-          <div className="links ">
-            <a href="#terms">Terms of Service</a>
-            <a href="#privacy">Privacy</a>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+				</div>
+				<Link to="/login">
+					<Button type={'button'} variant={'secondary'} text={'Get started'} className={'h-11 rounded-3xl'}/>
+				</Link>
+			</main>
+		</>
+	);
 };
 
-export default Landing;
+export default Home;
